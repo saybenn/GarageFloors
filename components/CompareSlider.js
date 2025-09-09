@@ -51,10 +51,18 @@ export default function CompareSlider({
       once: true,
     });
   };
-  const onMouseMove = (e) => {
-    if (!draggingRef.current) return;
-    requestAnimationFrame(() => setPosition(percentFromClientX(e.clientX)));
-  };
+  // const onMouseMove = (e) => {
+  //   if (!draggingRef.current) return;
+  //   requestAnimationFrame(() => setPosition(percentFromClientX(e.clientX)));
+  // };
+  // Better: memoize
+  const onMouseMove = useCallback(
+    (e) => {
+      if (!draggingRef.current) return;
+      requestAnimationFrame(() => setPosition(percentFromClientX(e.clientX)));
+    },
+    [percentFromClientX, setPosition]
+  );
   const onMouseUp = () => {
     draggingRef.current = false;
     window.removeEventListener("mousemove", onMouseMove);
@@ -71,12 +79,16 @@ export default function CompareSlider({
       once: true,
     });
   };
-  const onTouchMove = (e) => {
-    if (!draggingRef.current) return;
-    const t = e.touches[0];
-    e.preventDefault();
-    requestAnimationFrame(() => setPosition(percentFromClientX(t.clientX)));
-  };
+  const onTouchMove = useCallback(
+    (e) => {
+      if (!draggingRef.current) return;
+      const t = e.touches[0];
+      e.preventDefault();
+      requestAnimationFrame(() => setPosition(percentFromClientX(t.clientX)));
+    },
+    [percentFromClientX, setPosition]
+  );
+
   const onTouchEnd = () => {
     draggingRef.current = false;
     window.removeEventListener("touchmove", onTouchMove);
@@ -88,7 +100,7 @@ export default function CompareSlider({
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("touchmove", onTouchMove);
     };
-  }, []);
+  }, [onMouseMove, onTouchMove]);
 
   // Keyboard a11y
   const onKeyDown = (e) => {

@@ -87,12 +87,12 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex items-center rounded-lg px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold"
               >
                 Get a Free Quote
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -141,12 +141,12 @@ export default function Navbar() {
             >
               Contact
             </Link>
-            <a
+            <Link
               href="/contact"
               className="mt-1 inline-flex justify-center rounded-lg px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold"
             >
               Get a Free Quote
-            </a>
+            </Link>
             {site.phone && (
               <a
                 href={`tel:${site.phone.replace(/[^0-9+]/g, "")}`}

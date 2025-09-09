@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Thanks() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-16">
@@ -8,12 +10,12 @@ export default function Thanks() {
         We’ll reach out within one business day. If this is urgent, call us now.
       </p>
       <div className="mt-6">
-        <a
+        <Link
           href="/"
           className="text-[var(--color-primary,theme(colors.blue.700))] underline"
         >
           Back to Home
-        </a>
+        </Link>
       </div>
     </main>
   );

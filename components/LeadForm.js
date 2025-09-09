@@ -28,7 +28,7 @@ export default function LeadForm() {
 
   useEffect(() => {
     // Clear status on input
-    if (status) setStatus("");
+    setStatus((prev) => (prev ? "" : prev));
   }, [
     form.name,
     form.email,

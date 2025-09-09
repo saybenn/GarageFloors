@@ -26,11 +26,13 @@ export default function FAQ({
   const [openIndex, setOpenIndex] = useState(-1); // for singleOpen mode
   const [openSet, setOpenSet] = useState(() => new Set()); // for multi-open if singleOpen=false
 
-  if (!Array.isArray(items) || items.length === 0) return null;
+  // Normalize items so hooks always run in the same order
+  const itemsArr = Array.isArray(items) ? items : [];
+  const hasItems = itemsArr.length > 0;
 
   const schemaJson = useMemo(() => {
     if (!injectSchema) return null;
-    const mainEntity = items.slice(0, 6).map((it) => ({
+    const mainEntity = itemsArr.slice(0, 6).map((it) => ({
       "@type": "Question",
       name: String(it.q || "").trim(),
       acceptedAnswer: { "@type": "Answer", text: String(it.a || "").trim() },
@@ -40,7 +42,9 @@ export default function FAQ({
       "@type": "FAQPage",
       mainEntity,
     };
-  }, [items, injectSchema]);
+  }, [itemsArr, injectSchema]);
+
+  if (!hasItems) return null;
 
   const isOpen = (i) => (singleOpen ? openIndex === i : openSet.has(i));
 
@@ -77,7 +81,7 @@ export default function FAQ({
         </header>
 
         <dl className="mt-8 max-w-3xl mx-auto divide-y divide-slate-200">
-          {items.slice(0, 6).map((item, i) => (
+          {itemsArr.slice(0, 6).map((item, i) => (
             <FAQItem
               key={`${baseId}-${i}`}
               idx={i}
