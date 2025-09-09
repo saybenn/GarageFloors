@@ -1,0 +1,11 @@
+# robots.txt for Coastal Poly Floors
+# Generated: 2025-09-08
+# Purpose: Allow crawlers on main pages, block internal/utility endpoints
+
+User-agent: *
+Disallow: /api/
+Disallow: /thanks
+Disallow: /404
+Disallow: /500
+
+Sitemap: https://www.coastalpolyfloors.com/sitemap.xml
