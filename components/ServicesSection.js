@@ -20,7 +20,7 @@ export default function ServicesStack() {
   return (
     <div aria-labelledby="services-heading">
       <h2
-        id="services-heading"
+        id="services"
         className="flex justify-center mx-auto text-xl md:text-3xl font-extrabold text-slate-900 bg-[var(--color-light)]"
       >
         Our Services

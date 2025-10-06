@@ -74,10 +74,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link
-                href="/services/garage-floor-coatings"
-                className="hover:opacity-80 text-lg"
-              >
+              <Link href="/#services" className="hover:opacity-80 text-lg">
                 Services
               </Link>
             </li>
@@ -128,7 +125,7 @@ export default function Navbar() {
               About
             </Link>
             <Link
-              href="/services/garage-floor-coatings"
+              href="/#services"
               className="block px-3 py-2 hover:opacity-90"
               onClick={handleNav}
             >
