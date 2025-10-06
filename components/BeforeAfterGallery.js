@@ -32,14 +32,14 @@ export default function BeforeAfterGallery({
         </header>
 
         {/* Two-up grid on desktop; generous gaps to breathe */}
-        <div className="grid md:grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1  gap-6 lg:gap-8">
           {items.map((it) => (
             <BeforeAfterItem key={it.id} {...it} />
           ))}
         </div>
 
         {/* CTA strip */}
-        {cta && (cta.headline || cta.primary || cta.secondary) && (
+        {/* {cta && (cta.headline || cta.primary || cta.secondary) && (
           <div className="mt-12 md:mt-16 flex flex-col items-center text-center">
             {cta.headline && (
               <h3 className="text-lg md:text-xl font-semibold text-slate-900">
@@ -65,7 +65,7 @@ export default function BeforeAfterGallery({
               )}
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </section>
   );

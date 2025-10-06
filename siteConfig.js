@@ -2,21 +2,23 @@
 // Replace TODOs with final client data.
 
 export const site = {
-  brand: "Coastal Poly Floors",
-  legalName: "Coastal Poly Floors LLC",
-  baseUrl: "https://www.coastalpolyfloors.com",
+  brand: "Concrete Epoxy Solutions",
+  legalName: "Concrete Epoxy Solutions LLC",
+  baseUrl: "https://www.ces757.com",
 
-  phone: "(757) 555-0137",
-  email: "hello@coastalpolyfloors.com",
+  phone: "(757) 343-7605",
+  email: "concrete.epoxysolutions757@gmail.com",
 
-  address: null,
-  hours: "Mon–Sat 8am–6pm",
+  address: "106 S. First Colonial Rd Suite B Virginia Beach, VA 23454",
+  hours: "Mon–Fri 8am–4pm",
   areaServed: [
     "Virginia Beach",
     "Chesapeake",
     "Norfolk",
     "Portsmouth",
     "Suffolk",
+    "Hamptons",
+    "Newport News",
   ],
   priceRange: "$$",
 
@@ -93,12 +95,35 @@ export const site = {
   },
   // ---- Services content used by ServicesSection ----
   services: {
-    primarySlug: "garage-floor-coatings",
+    primarySlug: "full-flake",
     items: {
-      "garage-floor-coatings": {
-        title: "Garage Floors Built to Last",
+      "floor-epoxy": {
+        title: "Epoxy Floor Coatings",
         intro:
-          "We install UV-stable, full-flake polyaspartic floors designed for Virginia’s coastal climate. Proper surface prep, structural crack repair, and a fast-curing topcoat mean you can walk same-day and park within ~24–48 hours (conditions apply).",
+          "Industrial-grade epoxy systems with diamond-ground prep, crack repair, and a UV-stable polyaspartic topcoat for long-lasting protection. Ideal for garages and workshops.",
+        bullets: [
+          "Diamond-ground surface prep (no acid-etch)",
+          "100% solids epoxy basecoat",
+          "UV-stable polyaspartic topcoat (resists yellowing)",
+          "Hot-tire pickup and chemical resistance",
+        ],
+        image: {
+          src: "/media/epoxy-floor.png", // TODO: replace with real asset
+          alt: "Freshly coated epoxy garage floor",
+          width: 880,
+          height: 560,
+        },
+        badges: ["2-layer system", "Virginia Beach & Hampton Roads"],
+        ctas: {
+          primary: { label: "Get a Free Quote", href: "#quote" },
+          secondary: { label: "Contact Us", href: "/contact" },
+        },
+      },
+
+      "full-flake": {
+        title: "Full-Flake Polyaspartic",
+        intro:
+          "UV-stable, full-flake polyaspartic floors built for Virginia’s coastal climate. Proper prep and fast-cure chemistry mean same-day walk and ~24–48 hr park (conditions apply).",
         bullets: [
           "Diamond-ground prep (no acid-etch)",
           "Full-flake broadcast for coverage & traction",
@@ -106,15 +131,35 @@ export const site = {
           "Hot-tire pickup resistance",
         ],
         image: {
-          src: "/media/after-garage.webp", // TODO: replace with real asset
-          alt: "Fresh polyaspartic flake garage floor",
+          src: "/media/full-flake.png", // TODO: replace with real asset
+          alt: "Full-flake polyaspartic garage floor",
           width: 880,
           height: 560,
         },
-        badges: [
-          "Full-flake finish",
-          "{PRIMARY_CITY} & nearby", // token replaced by first areaServed city
+        badges: ["1-day install", "Virginia Beach & Hampton Roads"],
+        ctas: {
+          primary: { label: "Get a Free Quote", href: "#quote" },
+          secondary: { label: "Contact Us", href: "/contact" },
+        },
+      },
+
+      "floor-polish": {
+        title: "Concrete Polishing & Sealing",
+        intro:
+          "Mechanical hone and polish that densifies and dust-proofs your slab for a low-maintenance satin to gloss finish. Great for showrooms, garages, and shops.",
+        bullets: [
+          "Multi-step grind, hone, and polish",
+          "Lithium densifier & penetrating sealer",
+          "Low maintenance, easy to clean",
+          "Dust-proof, stain and abrasion resistance",
         ],
+        image: {
+          src: "/media/polished-floor.png", // TODO: replace with real asset
+          alt: "Polished concrete floor finish",
+          width: 880,
+          height: 560,
+        },
+        badges: ["Satin or gloss", "Virginia Beach & Hampton Roads"],
         ctas: {
           primary: { label: "Get a Free Quote", href: "#quote" },
           secondary: { label: "Contact Us", href: "/contact" },
@@ -122,6 +167,7 @@ export const site = {
       },
     },
   },
+
   warranty:
     "5-year adhesion & yellowing coverage (residential). Excludes substrate movement, hydrostatic moisture, structural cracking, and misuse.",
 

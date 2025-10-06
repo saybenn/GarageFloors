@@ -69,20 +69,20 @@ export default function Navbar() {
           {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-6 font-semibold text-sm">
             <li>
-              <Link href="/about" className="hover:opacity-90">
+              <Link href="/about" className="hover:opacity-80 text-lg">
                 About
               </Link>
             </li>
             <li>
               <Link
                 href="/services/garage-floor-coatings"
-                className="hover:opacity-90"
+                className="hover:opacity-80 text-lg"
               >
                 Services
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:opacity-90">
+              <Link href="/contact" className="hover:opacity-80 text-lg">
                 Contact
               </Link>
             </li>
